@@ -1,0 +1,84 @@
+.root{
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    position: absolute;
+    left: 25%;
+    overflow: hidden;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 3px rgb(243, 243, 243);
+}
+
+.register_title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register_title span{
+    color: rgb(63, 63, 63);
+    font-weight: 700;
+    font-size: 30px;
+    position: relative;
+}
+
+.register_title span::before{
+    content: "";
+    background: rgb(1, 190, 1);
+    height: 3px;
+    left: 15%;
+    bottom: -15px;
+    width: 70%;
+    position: absolute;
+}
+
+.root button{
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background: rgb(1, 190, 1);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: .3s;
+    padding: 15px 0;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.root button:hover{
+    background: rgb(0, 223, 0);
+}
+
+.register_body{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.register_body input{
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 18px;
+    background: rgb(238, 238, 238);
+    transition: .3s;
+}
+
+.register_body input:focus{
+    box-shadow: 0px 0px 1px 1px rgb(0, 223, 0);
+}
+
+.register_body h3{
+    color: red;
+    align-items: center;
+    display: flex;
+}
+
+.register_body h3 svg{
+    margin-right: 5px;
+}

@@ -1,0 +1,80 @@
+
+.statistic{
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.statistic_title{
+    color: rgb(75, 75, 75);
+    font-size: 30px;
+    margin: 0px;
+    height: 15%;
+    font-weight: 700;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 3px solid rgb(1, 190, 1);
+}
+
+.statistic_title h2{
+    margin: 0px;
+    font-size: 30px;
+}
+
+.statistic_title button{
+    background: rgb(1, 190, 1);
+    color: white;
+    padding: 7px 11px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.statistic_body{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+    height: 80%;
+    background: rgb(231, 231, 231);
+}
+
+.statistic_body_inner{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid white;
+}
+
+.statistic_body_inner ul{
+    margin: 0px;
+    font-weight: 500;
+    padding: 0px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    width: 40%;
+}
+
+.statistic_body_inner ul b{
+    font-size: 18px;
+    color: rgb(1, 190, 1);
+}
+
+.uncorrect,
+.correct{
+    background: rgb(1, 190, 1);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 8px;
+    margin: 0 5px;
+}
+
+.uncorrect{
+    background: red;
+}
