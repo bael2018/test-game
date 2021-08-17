@@ -30,7 +30,6 @@ const Game = () => {
     if(loading){
         return <Loader/>
     }
-
     return(
         <section className={cls.root}>
             {
