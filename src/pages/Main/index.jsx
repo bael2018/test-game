@@ -3,9 +3,15 @@ import cls from './Main.module.css'
 import Statistic from '../../components/Statistic'
 import Game from '../../components/Game'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { asycRequestAction } from '../../actionCreators'
 
 const Main = () => {
     const [enter , setEnter] = useState(false)
+    const dispatch = useDispatch()
+    if(enter){
+        dispatch(asycRequestAction())
+    }
 
     return(
         <section className={cls.root}>

@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { asycRequestAction, singleAnswerAction, singleQuestAction, singleValueAction } from '../../actionCreators'
-import Loader from '../Loader'
+import { singleAnswerAction, singleQuestAction, singleValueAction } from '../../actionCreators'
 import SingleQuestion from '../SingleQuestion'
 import cls from './Game.module.css'
 import {AiOutlineArrowDown} from 'react-icons/ai'
 
 const Game = () => {
     const questions = useSelector(state => state.quest.question)
-    const loading = useSelector(state => state.loader.loading)
     const [single , setSingle] = useState(false)
     const [game , setGame] = useState(false)
     const [quest , setQuest] = useState([])
@@ -16,7 +14,6 @@ const Game = () => {
 
     const startFunc = () => {
         setGame(true)
-        dispatch(asycRequestAction())
         setQuest(questions)
     }
 
@@ -26,10 +23,7 @@ const Game = () => {
         dispatch(singleAnswerAction(answer))
         dispatch(singleQuestAction(question))
     }
-    
-    if(loading){
-        return <Loader/>
-    }
+ 
     return(
         <section className={cls.root}>
             {

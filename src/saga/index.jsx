@@ -1,5 +1,5 @@
 import {put , call ,  takeEvery} from 'redux-saga/effects'
-import { getQuestionsAction, hideLoaderAction, showLoaderAction } from '../actionCreators'
+import { getQuestionsAction } from '../actionCreators'
 import {getQuestions} from '../api/index'
 import { GET_ASYNC_QUESTIONS } from '../types'
 
@@ -9,7 +9,6 @@ async function fetchRequest(){
 }
 
 function* questionsWorker(){
-    yield put(showLoaderAction())
     const base = yield call(fetchRequest)
     const newBase = base.map(({id}) => {
         const res = []
@@ -20,7 +19,6 @@ function* questionsWorker(){
         })
         return res
     })
-    yield put(hideLoaderAction())
     yield put(getQuestionsAction(newBase))
 }
 

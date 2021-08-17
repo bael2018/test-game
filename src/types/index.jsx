@@ -1,7 +1,5 @@
 export const GET_QUESTIONS = 'GET_QUESTIONS'
 export const GET_ASYNC_QUESTIONS = 'GET_ASYNC_QUESTIONS'
-export const SHOW_LOADER = 'SHOW_LOADER'
-export const HIDE_LOADER = 'HIDE_LOADER'
 export const AMOUNT_QUEST = 'AMOUNT_QUEST'
 export const GET_POINTS = 'GET_POINTS'
 export const REMOVE_POINTS = 'REMOVE_POINTS'

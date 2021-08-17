@@ -3,7 +3,6 @@ import Main from "../../pages/Main"
 import Register from "../../pages/Register"
 
 const Routes = ({user}) => {
-
     return(
         user ? (
             <Switch>
