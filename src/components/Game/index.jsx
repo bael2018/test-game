@@ -26,7 +26,7 @@ const Game = () => {
         dispatch(singleAnswerAction(answer))
         dispatch(singleQuestAction(question))
     }
-
+    
     if(loading){
         return <Loader/>
     }

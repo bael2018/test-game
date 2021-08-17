@@ -20,8 +20,8 @@ function* questionsWorker(){
         })
         return res
     })
-    yield put(getQuestionsAction(newBase))
     yield put(hideLoaderAction())
+    yield put(getQuestionsAction(newBase))
 }
 
 export function* questionWatcher(){
