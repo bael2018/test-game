@@ -47,7 +47,6 @@ const SingleQuestion = ({change}) => {
                 }else{
                     alert(`Wrong answer!`)
                     alert(`The correct answer was ${answer}`)
-                    dispatch(uncorrectAnswerAction(1))
                     setUserAnswer('')
                     change(false)
                 }
