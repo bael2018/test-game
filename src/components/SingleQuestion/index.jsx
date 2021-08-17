@@ -6,11 +6,11 @@ import cls from './SingleQuestion.module.css'
 const SingleQuestion = ({change , clearTick , timer}) => {
     const [userAnswer , setUserAnswer] = useState('')
 
-    const dispatch = useDispatch()
     const value = useSelector(state => state.single.value)
     const answer = useSelector(state => state.single.answer)
     const question = useSelector(state => state.single.question)
     const userPoints = useSelector(state => state.user.points)
+    const dispatch = useDispatch()
 
     if(timer === 60){
         alert('You are out of time!')

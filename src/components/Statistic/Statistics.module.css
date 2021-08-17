@@ -29,9 +29,15 @@
     color: white;
     padding: 7px 11px;
     border: none;
+    margin: 0 10px;
+    transition: .3s;
     border-radius: 10px;
     cursor: pointer;
     outline: none;
+}
+
+.statistic_title button:hover{
+    background: rgb(0, 223, 0);
 }
 
 .statistic_body{

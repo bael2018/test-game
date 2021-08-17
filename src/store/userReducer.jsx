@@ -1,4 +1,4 @@
-import { AMOUNT_QUEST, CORRET_ANSWER, GET_POINTS, REMOVE_POINTS, UNCORRET_ANSWER } from "../types"
+import { AMOUNT_QUEST, CLEAR_CORRECT, CLEAR_POINTS, CLEAR_QUESTS, CLEAR_UNCORRECT, CORRET_ANSWER, GET_POINTS, REMOVE_POINTS, UNCORRET_ANSWER } from "../types"
 
 const userName = JSON.parse(localStorage.getItem('userName'))
 
@@ -22,6 +22,14 @@ export const userReducer = ((state = initialState , action) => {
             return {...state , points: state.points + action.payload}
         case REMOVE_POINTS:
             return {...state , points: state.points - action.payload}
+        case CLEAR_QUESTS:
+            return {...state , amountOfQuest: action.payload}
+        case CLEAR_CORRECT:
+            return {...state , correctAnswer: action.payload}
+        case CLEAR_UNCORRECT:
+            return {...state , uncorrectAnswer: action.payload}
+        case CLEAR_POINTS:
+            return {...state , points: action.payload}
         default:
             return state;
     }
