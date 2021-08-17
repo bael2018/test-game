@@ -4,6 +4,7 @@ const initialState = {
     value: 0,
     answer: '',
     question: '',
+    timer: 0
 }
 
 export const singleQuestReducer = ((state = initialState , action) => {

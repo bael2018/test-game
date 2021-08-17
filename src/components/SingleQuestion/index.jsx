@@ -3,19 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { amountQuestionsAction, correctAnswerAction, getPointsAction, removePointsAction, uncorrectAnswerAction } from '../../actionCreators'
 import cls from './SingleQuestion.module.css'
 
-const SingleQuestion = ({change}) => {
+const SingleQuestion = ({change , clearTick , timer}) => {
     const [userAnswer , setUserAnswer] = useState('')
-    const [timer , setTimer] = useState(0)
+
     const dispatch = useDispatch()
     const value = useSelector(state => state.single.value)
     const answer = useSelector(state => state.single.answer)
     const question = useSelector(state => state.single.question)
     const userPoints = useSelector(state => state.user.points)
-
-    const time = () => {
-        setTimeout(() => setTimer(el => el + 1) ,  1000);
-    }
-    time()
 
     if(timer === 60){
         alert('You are out of time!')
@@ -23,6 +18,7 @@ const SingleQuestion = ({change}) => {
         dispatch(uncorrectAnswerAction(1))
         dispatch(amountQuestionsAction(1))
         change(false)
+        clearTick(false)
     }
 
     const checkAnswer = () => {

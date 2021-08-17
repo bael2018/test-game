@@ -4,13 +4,20 @@ import { singleAnswerAction, singleQuestAction, singleValueAction } from '../../
 import SingleQuestion from '../SingleQuestion'
 import cls from './Game.module.css'
 import {AiOutlineArrowDown} from 'react-icons/ai'
+import {GiPerspectiveDiceSixFacesRandom} from 'react-icons/gi'
 
 const Game = () => {
     const questions = useSelector(state => state.quest.question)
     const [single , setSingle] = useState(false)
+    const [timer , setTimer] = useState(0)
     const [game , setGame] = useState(false)
     const [quest , setQuest] = useState([])
     const dispatch = useDispatch()
+
+    const tick = item => {
+        if(item) setInterval(() => setTimer(el => el + 1) , 1000)
+        setTimer(0)
+    }
 
     const startFunc = () => {
         setGame(true)
@@ -18,6 +25,7 @@ const Game = () => {
     }
 
     const singleQuestion = (value , answer , question) => {
+        tick(true)
         setSingle(true)
         dispatch(singleValueAction(value))
         dispatch(singleAnswerAction(answer))
@@ -27,11 +35,12 @@ const Game = () => {
     return(
         <section className={cls.root}>
             {
-                single ? <SingleQuestion change={setSingle}/> :
+                single ? <SingleQuestion timer={timer} clearTick={tick} change={setSingle}/> :
                 (
                     game ? (
                         <section className={cls.game}>
                             <button onClick={() => setGame(false)} className={cls.game_end_btn}>End Game</button>
+                            <button className={cls.game_random}><GiPerspectiveDiceSixFacesRandom/></button>
                             <div className={cls.game_container}>
                                 {
                                     quest.length !== 0 ? (
