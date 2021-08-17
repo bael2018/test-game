@@ -14,16 +14,10 @@ const Game = () => {
     const [quest , setQuest] = useState([])
     const dispatch = useDispatch()
 
-    setTimeout(() => {
-        setQuest(questions)
-    }, 600);
-
     const startFunc = () => {
         setGame(true)
         dispatch(asycRequestAction())
-        setTimeout(() => {
-            setQuest(questions)
-        }, 600);
+        setQuest(questions)
     }
 
     const singleQuestion = (value , answer , question) => {
@@ -66,7 +60,7 @@ const Game = () => {
                                         })
                                     ) : (
                                         <div className={cls.warning}>
-                                            <h1>Something went wrong</h1>
+                                            <h1>Something went wrong !</h1>
                                         </div>
                                     )
                                 }
